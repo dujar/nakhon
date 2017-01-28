@@ -2,9 +2,9 @@
   "name": "nakhon",
   "version": "1.0.0",
   "description": "coffee shop website",
-  "main": "index.js",
+  "main": "app/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app/app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/dujar/nakhon/issues"
   },
-  "homepage": "https://github.com/dujar/nakhon#readme"
+  "homepage": "https://github.com/dujar/nakhon#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "express-form": "^0.12.6",
+    "reload": "^1.1.0"
+  }
 }
