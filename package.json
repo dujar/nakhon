@@ -4,7 +4,7 @@
   "description": "coffee shop website",
   "main": "app/app.js",
   "scripts": {
-    "start": "nodemon app/app.js"
+    "start": "nodemon app/app.js watch app/views watch app/routes"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "devDependencies": {},
   "dependencies": {
     "body-parser": "^1.16.0",
+    "ejs": "^2.5.5",
     "express": "^4.14.0",
     "express-form": "^0.12.6",
     "reload": "^1.1.0"
