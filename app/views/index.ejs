@@ -3,15 +3,21 @@
 <head>
   <% include partials/template/head.ejs %>
 </head>
-  <% include partials/template/header.ejs %>
 <body id="<%=pageID %>">
+<% include partials/template/header.ejs %>
+
 <h1> Coffee shop in Nakhon Nayok</h1>
-<p> but it does matter what you think</p>
-<p> but it does matter what you think</p>
-should be easy to add a template in another template
-<p> but it does matter what you think</p>
 
+<% if (pageID == 'home') { %>
+<div class="container auto">
+  <div class="cols-md-6 cols-lg-4 cols-xl-3"><%= activity.title %> </div>
+  <div class="cols-md-6 cols-lg-4 cols-xl-3"><%= activity.description%> </div>
+  <div class="cols-md-6 cols-lg-4 cols-xl-3"><%= activity.picture%> </div>
+</div>
 
-<script src="/reload/reload.js"></script>
+<% } %>
+
+<% include partials/template/jsdefault.ejs %>
 </body>
 </html>
+

@@ -23,6 +23,9 @@
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "express-form": "^0.12.6",
-    "reload": "^1.1.0"
+    "google-maps": "^3.2.1",
+    "path": "^0.12.7",
+    "reload": "^1.1.0",
+    "socket.io": "^1.7.2"
   }
 }
