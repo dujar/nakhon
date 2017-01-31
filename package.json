@@ -24,6 +24,7 @@
     "express": "^4.14.0",
     "express-form": "^0.12.6",
     "google-maps": "^3.2.1",
+    "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "reload": "^1.1.0",
     "socket.io": "^1.7.2"
