@@ -17,3 +17,8 @@
 #coffee-font {
   color: white;
 }
+
+.rowflex {
+  display: flex;
+  flex-wrap: wrap;
+}

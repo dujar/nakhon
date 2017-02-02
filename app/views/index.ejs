@@ -8,16 +8,16 @@
 
 <h1> Coffee shop in Nakhon Nayok</h1>
 
-<% if (pageID == 'home') { %>
-<div class="container auto">
-  <div class="cols-md-6 cols-lg-4 cols-xl-3"><%= activity.title %> </div>
-  <div class="cols-md-6 cols-lg-4 cols-xl-3"><%= activity.description%> </div>
-  <div class="cols-md-6 cols-lg-4 cols-xl-3"><%= activity.picture%> </div>
-</div>
-
+<% if (pageID=='new') { %>
+<% include new%>
+<% } else {%>
+<% include home %>
 <% } %>
 
+<%= JSON.stringify(appData.activity); %>
+
 <% include partials/template/jsdefault.ejs %>
+
+
 </body>
 </html>
-

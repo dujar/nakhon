@@ -1,44 +1,62 @@
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
+
 
 router.get('/', function(req,res) {
-  var appData = req.app.get('appData');
-  appData.activity.forEach(function(activity) {
+appData = req.app.get('appData');
+
     res.render('index', {
       pageTitle: 'Home',
       pageID: 'home',
-      activity: activity 
+      activity: appData
     });
-  })
+
 
 });
 
-router.post('/addactivity', function(req,res) {
+router.post('/activity', function(req,res) {
     var data = req.body;
-    var appData = req.app.get('appData');
+    appData = req.app.get('appData');
 
-    console.log(data);
+    console.log(typeof data);
     console.log(appData);
     filePath = __dirname + '/data/thingstodo.json';
-    appData.activity += data;
-    console.log(appData.activity);
+    console.log(filePath);
+    appData.activity.push(data);
+    console.log(appData);
 
-    req.on('end', function (){
-        fs.appendFile(filePath, appData, function() {
-    res.end();
-        });
-  res.redirect('/activity');
+    fs.writeFile('message.txt', JSON.stringify(appData), 'utf8', (err) => {
+  if (err) throw err;
+  console.log('successfully copied');
+  });
+
+    res.render('activity', {
+      pageTitle: 'activities',
+      pageID: 'activity',
+      activities: appData
+    });
+
 });
 
-});
+router.get('/new', function(req,res) {
 
-router.get('/activity', function(req,res) {
-  
-  res.render('activity', {
+  res.render('new', {
   pageTitle: 'Add another Activity',
-  pageID: 'activity'
+  pageID: 'new'
 
   });
 });
+
+router.get('/home', function(req,res) {
+
+  res.render('activity', {
+  pageTitle: 'Homely based',
+  pageID: 'new'
+
+  });
+});
+
+
 
 module.exports = router;

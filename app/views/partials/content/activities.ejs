@@ -1,0 +1,25 @@
+
+<div class="container">
+  <header class="jumbotron">
+    <div class="container">
+      <h1>Welcome to the activities Page</h1>
+     <p>View the world of Coffee Nakhon</p>
+      <p>
+        <a href="/new" class="btn btn-primary btn-large">Add New Activity</a>
+      </p>
+   </div>
+  </header>
+    <div class="row text-center rowflex">
+      <%  activities.activity.forEach(function(activity) { %>
+        <div class="col-md-3 col-lg-4 col-xl-3">
+
+          <div class="thumbnail">
+            <div class="caption"><h4><%= activity.title %></h4></div>
+            <img src="<%= activity.picture%>"> </img>
+          </div>
+            <p> <%= activity.description%> <p>
+        </div>
+      <% }); %>
+
+    </div>
+</div>
